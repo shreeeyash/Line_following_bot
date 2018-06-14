@@ -12,7 +12,7 @@
           http://www.life2coding.com/install-opencv-3-4-0-python-3-raspberry-pi-3/
           https://www.youtube.com/watch?v=ZuhPzP5lt9U
      
-  ##############################COMMANDS i used#############################
+  ##############################COMMANDS I used#############################
   190  sudo apt-get clean
   191  sudo apt-get autoremove
   192  df -h
