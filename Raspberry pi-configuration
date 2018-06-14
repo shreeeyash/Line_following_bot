@@ -1,0 +1,99 @@
+                                    Steps to use RASPBERRY PI with OpenCV:
+                                    
+  1. Download noobs on computer.
+  2. use SDformatter to format sd card (FAT).
+  3. connect PI to monitor, keyboard and mouse and insert SD card.
+  4. put tick mark on RASPBIAN and let it install.
+  5. connect to a wifi and get ip(192.168.0.XXX).
+  6. enable ssh and vnc using terminal of pi.
+       $ sudo  raspi-config
+       -now enable ssh and vnc.
+  7. its time to install OpenCV, follow these two links.
+          http://www.life2coding.com/install-opencv-3-4-0-python-3-raspberry-pi-3/
+          https://www.youtube.com/watch?v=ZuhPzP5lt9U
+     
+  ##############################COMMANDS i used#############################
+  190  sudo apt-get clean
+  191  sudo apt-get autoremove
+  192  df -h
+  193  sudo apt-get update 
+  194  sudo apt-get upgrade
+  195  sudo apt-get install build-essential cmake pkg-config -y
+  196  sudo apt-get install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev -y
+  197  sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev -y
+  198  sudo apt-get install libxvidcore-dev libx264-dev -y
+  199  sudo apt-get install libgtk2.0-dev libgtk-3-dev -y
+  200  sudo apt-get install libatlas-base-dev gfortran -y
+  201  sudo apt-get install python3 python3-setuptools python3-dev -y
+  202  wget https://bootstrap.pypa.io/get-pip.py
+  203  sudo python3 get-pip.py
+  204  sudo pip3 install numpy
+ 
+  206  cd ~
+  207  wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.4.0.zip
+  208  sudo apt-get install ca-certificates
+  209  wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.4.0.zip
+  210  wget -O -k opencv.zip https://github.com/Itseez/opencv/archive/3.4.0.zip
+  211  wget -O --no-check-certificate opencv.zip https://github.com/Itseez/opencv/archive/3.4.0.zip
+  212  wget --no-check-certificate opencv.zip https://github.com/Itseez/opencv/archive/3.4.0.zip
+  213  wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.4.0.zip --no-check-certificate
+  214  unzip opencv.zip
+  215  wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.4.0.zip --no-check-certificate
+  216  unzip opencv_contrib.zip
+  217  ls
+  218  cd opencv-3.4.00
+  219  cd opencv-3.4.0
+  220  mkdir build && cd build
+  221  cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D BUILD_opencv_java=OFF -D BUILD_opencv_python2=OFF -D BUILD_opencv_python3=ON -D PYTHON_DEFAULT_EXECUTABLE=$(which python3) -D INSTALL_C_EXAMPLES=OFF -D INSTALL_PYTHON_EXAMPLES=ON -D BUILD_EXAMPLES=ON-D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.4.0/modules -D WITH_CUDA=OFF -D BUILD_TESTS=OFF -D BUILD_PERF_TESTS= OFF ..
+  222  sudo nano /etc/dphys-swapfile
+  223  sudo /etc/init.d/dphys-swapfile stop
+  224  sudo /etc/init.d/dphys-swapfile start
+  225  make -j4
+  226  sudo make install
+  227  sudo idconfig
+  228  sudo ldconfig
+  229  ls -l /usr/local/lib/python3.5/dist-packages/
+  230  cd /usr/local/lib/python3.5/dist-packages/
+  231  sudo mv /usr/local/lib/python3.5/dist-packages/cv2.cpython-35m-arm-linux-gnueabihf.so cv2.so
+  232  ls
+  233  cd ~
+  234  python3
+  235  ls
+  236  rm opencv.zip opencv_contrib.zip
+  237  ls
+  238  sudo nano /etc/dphys-swapfile
+ 
+  241  sudo /etc/init.d/dphys-swapfile stop
+  242  sudo /etc/init.d/dphys-swapfile start
+  243  source ~/cvpi/bin/activate
+  244  pip3 freeze
+  245  pip3 install numpy
+  246  pip3 freeze
+  247  ln -s /usr/local/lib/python3.5/dist-packages/cv2.so ~/cvpi/lib/python3.5/site-packages/cv2.so
+  248  cd cvpi/lib/python3.5/site-packages/
+  249  ls
+  250  python3
+  251  deactivate
+ 
+  253  cd ~
+  254  workon cvpi
+  255  source ~/.cvpi
+  256  source ~/cvpi/bin/active
+  257  source ~/cvpi/bin/activate
+
+         
+
+
+
+
+         
+                  
+
+
+          
+
+
+
+
+
+
